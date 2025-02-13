@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myflutter_3/main.dart';
+import 'package:myflutter_3/options.dart';
 
 class Profile extends StatelessWidget {
   const Profile({super.key});
@@ -65,7 +66,7 @@ class Profile extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => MyHomePage(title: 'My App')),
+                          builder: (context) => MyApp()),
                     );
                   },
                   style: ElevatedButton.styleFrom(
@@ -81,14 +82,21 @@ class Profile extends StatelessWidget {
                 ),
                 SizedBox(width: 10),
                 OutlinedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          Options()),
+                );
+                  },
                   style: OutlinedButton.styleFrom(
                     side: BorderSide(color: Colors.blueAccent),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
                   ),
-                  child: Text("Settings"),
+                  child: Text("Options"),
                 ),
               ],
             ),
